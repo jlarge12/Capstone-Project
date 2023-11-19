@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Data Fetch Example</title>
+</head>
+<body>
+  <p id="result">Fetching data...</p>
+
+  <script>
+    // Fetch data from the Node.js server
+    fetch('http://localhost:3000/api/data')
+      .then(response => response.json())
+      .then(data => {
+        // Update the <p> tag with the received data
+        document.getElementById('result').innerText = data.message;
+      })
+      .catch(error => console.error('Error:', error));
+  </script>
+</body>
+</html>
