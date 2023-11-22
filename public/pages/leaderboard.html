@@ -38,6 +38,8 @@
         // Clear existing rows
         tableBody.innerHTML = '';
 
+        users.sort((a, b) => b.points - a.points);
+
         // Iterate over each user and add a new row to the table
         users.forEach(user => {
           const row = tableBody.insertRow();
