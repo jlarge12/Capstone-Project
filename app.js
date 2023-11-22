@@ -40,15 +40,32 @@ app.get('/api/getUsers', (req, res) => {
 
 app.post('/api/addUser', (req, res) => {
   console.log(req.body)
-  const { userId, name, email, points } = req.body;
+  const { userId, name, email, activity } = req.body;
 
   // Validate the data (add your own validation logic as needed)
-  if (!userId || !name || !email || !points) {
+  if (!userId || !name || !email || !activity) {
     return res.status(400).json({ error: 'Invalid data. All fields are required.' });
   }
 
+  const activityPoints = {
+    recycled_plastic: 5,
+    took_the_bus: 3,
+    // Add other activities and their corresponding points
+  };
+
+  const points = activityPoints[activity];
+
+  const sql = `
+    INSERT INTO users (userId, name, email, points)
+    VALUES (?, ?, ?, ?)
+    ON DUPLICATE KEY UPDATE
+    name = VALUES(name),
+    email = VALUES(email),
+    points = points + VALUES(points)
+  `;
+
   // Insert the data into the database
-  pool.query('INSERT INTO users (userId, name, email, points) VALUES (?, ?, ?, ?)', [userId, name, email, points], (err, results) => {
+  pool.query(sql, [userId, name, email, points], (err, results) => {
     if (err) {
       console.error('Error adding user to the database:', err);
       return res.status(500).json({ error: 'Internal Server Error' });
