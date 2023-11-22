@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Data Fetch Example</title>
+</head>
+<body>
+  <form id="addUserForm">
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" name="userId" required>
+    <br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+
+    <label for="points">Points:</label>
+    <input type="number" id="points" name="points" required>
+    <br>
+
+    <button type="submit">Add User</button>
+  </form>
+
+  <p id="result">Fetching data...</p>
+
+  <script>
+    const addUserForm = document.getElementById('addUserForm');
+    addUserForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+  
+      // Extract form data
+      const formData = {
+        userId: document.getElementById('userId').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        points: document.getElementById('points').value,
+      };
+  
+      // Send form data to the server
+      fetch('http://localhost:3000/api/addUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('New user added:', data);
+      })
+      .catch(error => {
+        console.error('Error adding user:', error);
+      });
+    });
+  </script>
+</body>
+</html>
