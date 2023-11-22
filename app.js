@@ -15,31 +15,20 @@ const pool = mysql.createPool(dbConfig);
 
 // Set up a route to handle GET requests
 app.get('/api/getUsers', (req, res) => {
-  // Get a connection from the pool
-  pool.getConnection((err, connection) => {
-    if (err) {
-      console.error('Error getting database connection:', err);
-      return res.status(500).json({ error: 'Internal Server Error' });
-    }
+  console.log("Fetching user data...")
 
-    // Execute a query
-    connection.query('SELECT * FROM users', (queryErr, results) => {
-      // Release the connection back to the pool
-      connection.release();
-
+    pool.query('SELECT * FROM users', (queryErr, results) => {
       if (queryErr) {
         console.error('Error executing query:', queryErr);
         return res.status(500).json({ error: 'Internal Server Error' });
       }
 
-      // Send the results to the client
+      console.log("User data loaded")
       res.json(results);
     });
-  });
 });
 
-app.post('/api/addUser', (req, res) => {
-  console.log(req.body)
+app.post('/api/updateUser', (req, res) => {
   const { userId, name, email, activity } = req.body;
 
   // Validate the data (add your own validation logic as needed)

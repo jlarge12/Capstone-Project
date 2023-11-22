@@ -6,16 +6,60 @@
   <title>Node.js Data Fetch Example</title>
 </head>
 <body>
-  <p id="result">Fetching data...</p>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Activity</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody"></tbody>
+  </table>
 
   <script>
-    fetch('http://localhost:3000/api/getUsers')
-      .then(response => response.json())
-      .then(data => {
-        const resultElement = document.getElementById('result');
-        resultElement.innerText = JSON.stringify(data, null, 2);      
-      })
-      .catch(error => console.error('Error:', error));
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchData();
+
+      // Function to fetch data from the server
+      function fetchData() {
+        fetch('http://localhost:3000/api/getUsers')
+          .then(response => response.json())
+          .then(data => displayData(data))
+          .catch(error => console.error('Error fetching data:', error));
+      }
+
+      // Function to display data in the table
+      function displayData(users) {
+        const tableBody = document.getElementById('userTableBody');
+
+        // Clear existing rows
+        tableBody.innerHTML = '';
+
+        // Iterate over each user and add a new row to the table
+        users.forEach(user => {
+          const row = tableBody.insertRow();
+
+          // Add cells with user data
+          const userIdCell = row.insertCell(0);
+          userIdCell.textContent = user.userId;
+
+          const nameCell = row.insertCell(1);
+          nameCell.textContent = user.name;
+
+          const emailCell = row.insertCell(2);
+          emailCell.textContent = user.email;
+
+          const activityCell = row.insertCell(3);
+          activityCell.textContent = user.activity;
+
+          const pointsCell = row.insertCell(4);
+          pointsCell.textContent = user.points;
+        });
+      }
+    });
   </script>
 </body>
 </html>
