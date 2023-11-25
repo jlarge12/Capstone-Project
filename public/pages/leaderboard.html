@@ -8,10 +8,11 @@
 <body>
   <label for="sortOption">Sort By:</label>
   <select id="sortOption" onchange="changeSortOption()">
-    <option value="points-desc">Points Descending</option>
-    <option value="points-asc">Points Ascending</option>
-    <option value="name-desc">Name Descending</option>
-    <option value="name-asc">Name Ascending</option>
+    <option value="" disabled selected>Select Sorting Option</option>
+    <option value="points-desc">Points Highest First</option>
+    <option value="points-asc">Points Lowest First</option>
+    <option value="name-desc">Name Reverse Alphabetically</option>
+    <option value="name-asc">Name Alphabetically</option>
   </select>
 
   <table id="userTable">

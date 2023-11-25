@@ -44,11 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.changeSortOption = function() {
       const sortOption = document.getElementById('sortOption').value;
-      const [field, order] = sortOption.split('-');
 
-      sortOrder = order;
-      sortField = field;
-      fetchData(); // Fetch and display data with the new sort order
+      if (sortOption) {
+        const [field, order] = sortOption.split('-');
+        sortOrder = order;
+        sortField = field;
+        fetchData();
+      }
     }
     
     window.resetLeaderboard = function() {
