@@ -71,6 +71,24 @@ app.post('/api/resetLeaderboard', (req, res) => {
   });
 });
 
+app.post('/api/signup', (req, res) => {
+  const { fullName, userId, email, password } = req.body;
+
+  const hashedPassword = require('crypto').createHash('sha256').update(password).digest('hex');
+  const initialPoints = 0;
+
+  const sql = 'INSERT INTO users (name, userId, email, password, points) VALUES (?, ?, ?, ?, ?)';
+  pool.query(sql, [fullName, userId, email, hashedPassword, initialPoints], (err, results) => {
+    if (err) {
+      console.error('Error signing up:', err);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+    console.log('User signed up successfully');
+    res.json({ message: 'User signed up successfully' });
+  });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
