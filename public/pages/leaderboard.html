@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node.js Data Fetch Example</title>
+  <title>Leaderbord</title>
 </head>
 <body>
   <table id="userTable">
     <thead>
       <tr>
         <th>User ID</th>
-        <th>Name</th>
+        <th>
+          Name
+          <button id="sortNameButton" onclick="toggleSort('name')">Sort</button>
+        </th>
         <th>Email</th>
         <th>Activity</th>
-        <th>Points</th>
+        <th>
+          Points
+          <button id="sortPointsButton" onclick="toggleSort('points')">Sort</button>
+        </th>
       </tr>
     </thead>
     <tbody id="userTableBody"></tbody>
@@ -23,7 +29,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       fetchData();
 
-      // Function to fetch data from the server
       function fetchData() {
         fetch('http://localhost:3000/api/getUsers')
           .then(response => response.json())
@@ -31,20 +36,20 @@
           .catch(error => console.error('Error fetching data:', error));
       }
 
-      // Function to display data in the table
       function displayData(users) {
         const tableBody = document.getElementById('userTableBody');
 
-        // Clear existing rows
         tableBody.innerHTML = '';
 
-        users.sort((a, b) => b.points - a.points);
+        if (sortField === 'name') {
+          users.sort((a, b) => sortOrder === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+        } else if (sortField === 'points') {
+          users.sort((a, b) => sortOrder === 'asc' ? a.points - b.points : b.points - a.points);
+        }
 
-        // Iterate over each user and add a new row to the table
         users.forEach(user => {
           const row = tableBody.insertRow();
 
-          // Add cells with user data
           const userIdCell = row.insertCell(0);
           userIdCell.textContent = user.userId;
 
@@ -61,6 +66,15 @@
           pointsCell.textContent = user.points;
         });
       }
+
+      let sortOrder = 'asc';
+      let sortField = 'points';
+
+      window.toggleSort = function(field) {
+        sortOrder = field === sortField ? (sortOrder === 'asc' ? 'desc' : 'asc') : 'asc';
+        sortField = field;
+        fetchData();
+      };
     });
   </script>
 </body>

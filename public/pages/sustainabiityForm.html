@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node.js Data Fetch Example</title>
+  <title>Submit Activity</title>
 </head>
 <body>
   <form id="addUserForm">
@@ -30,14 +30,11 @@
     <button type="submit">Add User</button>
   </form>
 
-  <p id="result">Fetching data...</p>
-
   <script>
     const addUserForm = document.getElementById('addUserForm');
     addUserForm.addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent default form submission
+      event.preventDefault();
   
-      // Extract form data
       const formData = {
         userId: document.getElementById('userId').value,
         name: document.getElementById('name').value,
@@ -45,7 +42,6 @@
         activity: document.getElementById('activity').value,
       };
   
-      // Send form data to the server
       fetch('http://localhost:3000/api/updateUser', {
         method: 'POST',
         headers: {
