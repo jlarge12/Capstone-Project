@@ -6,19 +6,25 @@
   <title>Leaderbord</title>
 </head>
 <body>
+  <label for="sortOption">Sort By:</label>
+  <select id="sortOption" onchange="changeSortOption()">
+    <option value="points-desc">Points Descending</option>
+    <option value="points-asc">Points Ascending</option>
+    <option value="name-desc">Name Descending</option>
+    <option value="name-asc">Name Ascending</option>
+  </select>
+
   <table id="userTable">
     <thead>
       <tr>
         <th>User ID</th>
         <th>
           Name
-          <button id="sortNameButton" onclick="toggleSort('name')">Sort</button>
         </th>
         <th>Email</th>
         <th>Activity</th>
         <th>
           Points
-          <button id="sortPointsButton" onclick="toggleSort('points')">Sort</button>
         </th>
       </tr>
     </thead>

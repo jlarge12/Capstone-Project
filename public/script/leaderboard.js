@@ -42,11 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let sortOrder = 'asc';
     let sortField = 'points';
 
-    window.toggleSort = function(field) {
-      sortOrder = field === sortField ? (sortOrder === 'asc' ? 'desc' : 'asc') : 'asc';
+    window.changeSortOption = function() {
+      const sortOption = document.getElementById('sortOption').value;
+      const [field, order] = sortOption.split('-');
+
+      sortOrder = order;
       sortField = field;
-      fetchData();
-    };
+      fetchData(); // Fetch and display data with the new sort order
+    }
     
     window.resetLeaderboard = function() {
       if (confirm('Are you sure you want to reset the leaderboard? This will clear all user data.')) {
