@@ -25,6 +25,8 @@
     <tbody id="userTableBody"></tbody>
   </table>
 
+  <button onclick="resetLeaderboard()">Reset Leaderboard</button>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       fetchData();
@@ -74,6 +76,20 @@
         sortOrder = field === sortField ? (sortOrder === 'asc' ? 'desc' : 'asc') : 'asc';
         sortField = field;
         fetchData();
+      };
+      
+      window.resetLeaderboard = function() {
+        if (confirm('Are you sure you want to reset the leaderboard? This will clear all user data.')) {
+          fetch('http://localhost:3000/api/resetLeaderboard', {
+            method: 'POST',
+          })
+          .then(response => response.json())
+          .then(data => {
+            alert(data.message);
+            fetchData(); // Refresh the table after resetting
+          })
+          .catch(error => console.error('Error resetting leaderboard:', error));
+        }
       };
     });
   </script>
