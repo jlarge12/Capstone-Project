@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    checkAndDisplayWelcomeMessage();
+    redirect_if_not_logged_in();
 
-    function checkAndDisplayWelcomeMessage() {
+    function redirect_if_not_logged_in() {
         const userName = sessionStorage.getItem('username');
-    
+
         const message = document.getElementById('loggedInText');
     
         if (userName) {
             message.innerText = `Welcome, ${userName}!`;
         } else {
-            message.innerText = 'Welcome, Guest';
+            window.location.href = '../pages/login.html';
         }
     }
 });

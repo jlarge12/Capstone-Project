@@ -6,19 +6,11 @@
   <title>Submit Activity</title>
 </head>
 <body>
+  <div id="loggedInMessage">
+    <p id="loggedInText"></p>
+  </div>
+
   <form id="addUserForm">
-    <label for="userId">User ID:</label>
-    <input type="text" id="userId" name="userId" required>
-    <br>
-
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <br>
-
     <label for="activity">Activity:</label>
       <select id="activity" name="activity" required>
         <option value="recycled_plastic">Recycled Plastic</option>
@@ -27,9 +19,11 @@
       </select>
     <br>
 
-    <button type="submit">Add User</button>
+    <button type="submit">Submit Activity</button>
   </form>
 
   <script src="../script/sustainabilityForm.js"></script>
+  <script src="../script/redirect-to-login.js"></script>
+
 </body>
 </html>

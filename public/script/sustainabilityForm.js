@@ -3,13 +3,11 @@ const addUserForm = document.getElementById('addUserForm');
       event.preventDefault();
   
       const formData = {
-        userId: document.getElementById('userId').value,
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
+        userId: sessionStorage.getItem('userId'),
         activity: document.getElementById('activity').value,
       };
   
-      fetch('http://localhost:3000/api/updateUser', {
+      fetch('http://localhost:3000/api/submitActivity', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

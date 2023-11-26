@@ -23,10 +23,10 @@ app.get('/api/getUsers', (req, res) => {
     });
 });
 
-app.post('/api/updateUser', (req, res) => {
-  const { userId, name, email, activity } = req.body;
+app.post('/api/submitActivity', (req, res) => {
+  const { userId, activity } = req.body;
 
-  if (!userId || !name || !email || !activity) {
+  if (!userId || !activity) {
     return res.status(400).json({ error: 'Invalid data. All fields are required.' });
   }
 
@@ -36,24 +36,16 @@ app.post('/api/updateUser', (req, res) => {
   };
 
   const points = activityPoints[activity];
+  const updateSql = 'UPDATE users SET points = points + ? WHERE userId = ?';
 
-  const sql = `
-    INSERT INTO users (userId, name, email, points)
-    VALUES (?, ?, ?, ?)
-    ON DUPLICATE KEY UPDATE
-    name = VALUES(name),
-    email = VALUES(email),
-    points = points + VALUES(points)
-  `;
-
-  pool.query(sql, [userId, name, email, points], (err, results) => {
+  pool.query(updateSql, [points, userId], (err, results) => {
     if (err) {
-      console.error('Error adding user to the database:', err);
+      console.error('Error updating user points:', err);
       return res.status(500).json({ error: 'Internal Server Error' });
     }
 
-    console.log('User added to the database:', results);
-    res.json({ message: 'User added successfully' });
+    console.log('User ponts updated:', results);
+    res.json({ message: 'User points updated successfully' });
   });
 });
 
@@ -92,9 +84,6 @@ app.post('/api/signup', (req, res) => {
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
 
-  // Validate input (add more validation as needed)
-
-  // Check login credentials against the database
   const sql = 'SELECT * FROM users WHERE email = ? AND password = ?';
   const hashedPassword = require('crypto').createHash('sha256').update(password).digest('hex');
 
