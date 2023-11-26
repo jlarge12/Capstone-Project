@@ -106,7 +106,12 @@ app.post('/api/login', (req, res) => {
 
     if (results.length > 0) {
       const user = results[0];
-      res.json({ success: true, user: { name: user.name } });
+      res.json({ success: true, user: { 
+        name: user.name,
+        userId: user.userId,
+        email: user.email,
+        points: user.points
+      }});
     } else {
       res.json({ success: false });
     }

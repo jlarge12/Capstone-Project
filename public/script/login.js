@@ -17,6 +17,10 @@ function submitLogin() {
       if (data.success) {
         alert(`Welcome, ${data.user.name}!`);
         sessionStorage.setItem('username', data.user.name)
+        sessionStorage.setItem('userId', data.user.userId)
+        sessionStorage.setItem('userEmail', data.user.email)
+        sessionStorage.setItem('userPoints', data.user.points)
+
         // Redirect to the user's dashboard or perform additional actions as needed
         window.location.href = '../pages/leaderboard.html';
       } else {
