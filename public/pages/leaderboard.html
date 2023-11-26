@@ -6,6 +6,11 @@
   <title>Leaderbord</title>
 </head>
 <body>
+
+  <div id="loggedInMessage">
+    <p id="loggedInText"></p>
+  </div>
+
   <label for="sortOption">Sort By:</label>
   <select id="sortOption" onchange="changeSortOption()">
     <option value="" disabled selected>Select Sorting Option</option>
@@ -35,5 +40,7 @@
   <button onclick="resetLeaderboard()">Reset Leaderboard</button>
 
   <script src="../script/leaderboard.js"></script>
+  <script src="../script/check-login.js"></script>
+
 </body>
 </html>

@@ -16,6 +16,7 @@ function submitLogin() {
     .then(data => {
       if (data.success) {
         alert(`Welcome, ${data.user.name}!`);
+        sessionStorage.setItem('username', data.user.name)
         // Redirect to the user's dashboard or perform additional actions as needed
         window.location.href = '../pages/leaderboard.html';
       } else {
@@ -23,4 +24,4 @@ function submitLogin() {
       }
     })
     .catch(error => console.error('Error logging in:', error));
-  }
+}
