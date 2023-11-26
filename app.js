@@ -89,6 +89,30 @@ app.post('/api/signup', (req, res) => {
   });
 });
 
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+
+  // Validate input (add more validation as needed)
+
+  // Check login credentials against the database
+  const sql = 'SELECT * FROM users WHERE email = ? AND password = ?';
+  const hashedPassword = require('crypto').createHash('sha256').update(password).digest('hex');
+
+  pool.query(sql, [email, hashedPassword], (err, results) => {
+    if (err) {
+      console.error('Error logging in:', err);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+    if (results.length > 0) {
+      const user = results[0];
+      res.json({ success: true, user: { name: user.name } });
+    } else {
+      res.json({ success: false });
+    }
+  });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
