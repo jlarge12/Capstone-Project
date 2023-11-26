@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           homeLink.style.display = 'inline-block';
           sustainabilityFormLink.style.display = 'none';
-          leaderboardLink.style.display = 'none';
+          leaderboardLink.style.display = 'inline-block';
           loginLink.style.display = 'inline-block';
           signupLink.style.display = 'inline-block';
           logoutLink.style.display = 'none';
