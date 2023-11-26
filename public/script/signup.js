@@ -14,7 +14,8 @@ function submitSignUp() {
     })
     .then(response => response.json())
     .then(data => {
-      alert(data.message);
+      alert(data.message + "! Please login.");
+      window.location.href = '../pages/login.html';
     })
     .catch(error => console.error('Error signing up:', error));
  }

@@ -4,8 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Login</title>
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
+
+  <div id="navbar">
+    <a href="./home.html" id="homeLink">Home</a>
+    <a href="./sustainabiityForm.html" id="sustainabilityFormLink">Sustainability Form</a>
+    <a href="./leaderboard.html" id="leaderboardLink">Leaderboard</a>
+    <a href="./login.html" id="loginLink">Login</a>
+    <a href="./signup.html" id="signupLink">Signup</a>
+    <a href="./login.html" id="logoutLink" onclick="logout()">Logout</a>
+  </div>
+
   <h2>User Login</h2>
   <form id="loginForm">
     <label for="email">Email:</label>
@@ -18,5 +29,7 @@
   </form>
 
   <script src="../script/login.js"></script>
+  <script src="../script/navbar-display.js"></script>
+
 </body>
 </html>
