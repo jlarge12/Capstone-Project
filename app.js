@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 const dbConfig = require('./dbConfig'); 
 
 const app = express();
@@ -103,6 +104,37 @@ app.post('/api/login', (req, res) => {
       }});
     } else {
       res.json({ success: false });
+    }
+  });
+});
+
+app.post('/api/send-email', (req, res) => {
+  const { name, email, message } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false,
+    auth: {
+      user: 'xxx@outlook.com', // auth for email account to send FROM
+      pass: 'xxx'
+    }
+  });
+
+  const mailOptions = {
+    from: 'xxx@outlook.com', // must match auth user email
+    to: 'xxx@outlook.com', // email address to send TO
+    subject: 'New Message from Contact Form',
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error sending email:', error);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
+    } else {
+      console.log('Email sent:', info.response);
+      res.json({ success: true, message: 'Email sent successfully' });
     }
   });
 });

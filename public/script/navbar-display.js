@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const loginLink = document.getElementById('loginLink');
         const signupLink = document.getElementById('signupLink');
         const logoutLink = document.getElementById('logoutLink');
+        const contactUsLink = document.getElementById('contactUsLink');
       
         if (isLoggedIn) {
           homeLink.style.display = 'inline-block';
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
           loginLink.style.display = 'none';
           signupLink.style.display = 'none';
           logoutLink.style.display = 'inline-block';
+          contactUsLink.style.display = 'inline-block';
         } else {
           homeLink.style.display = 'inline-block';
           sustainabilityFormLink.style.display = 'none';
@@ -25,17 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
           loginLink.style.display = 'inline-block';
           signupLink.style.display = 'inline-block';
           logoutLink.style.display = 'none';
+          contactUsLink.style.display = 'inline-block';
         }
       }
 });
 
 function logout() {
-    // Clear session storage
     sessionStorage.clear();
   
-    // Display a popup message
     alert('Logged out successfully');
   
-    // Redirect to the leaderboard page
-    window.location.href = 'leaderboard.html';
+    window.location.href = 'home.html';
 }
