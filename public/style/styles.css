@@ -1,5 +1,9 @@
+body {
+    color: black;
+}
+
 #navbar {
-    background-color: #7500c0;
+    background-color: #460073;
     overflow: hidden;
     font-family: 'Graphik', sans-serif;
     font-size: 18px;
@@ -24,7 +28,7 @@
 }
 
 #navbar a:hover {
-    background-color: #a055f5;
+    background-color: #7500c0;
 }
 
 .HubBanner {
@@ -43,26 +47,16 @@
     padding: 10px;
 }
 
-.about-us-container {
-    font-family: 'Graphik', sans-serif;
-    max-width: 1160px; /* Set a maximum width for better readability on larger screens */
-    margin: 0 auto; /* Center the content horizontally */
-    background-color: #e6dcff; /* Accent Purple 5 */
-    border-radius: 10px;
-    padding: 5px 20px;
-}
-
-.about-us-title h2 {
-    color: #460073; /* Core Purple 2 */
-    font-size: 35px; /* Increase font size */
-    text-align: center;
-}
-
-.about-us-title p {
-    text-align: left; /* Left-align paragraphs */
+  button[type="submit"] {
+    background-color: #460073; /* Core Purple 2 */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 18px; /* Increase font size */
-}
+  }
 
-.about-us-title a {
-    color: #460073; /* Core Purple 2 for the link */
-}
+  button[type="submit"]:hover {
+    background-color: #7500c0; /* Core Purple 1 on hover */
+  }

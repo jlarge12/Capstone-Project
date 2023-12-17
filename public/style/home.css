@@ -1,0 +1,66 @@
+.about-us-container {
+    font-family: 'Graphik', sans-serif;
+    max-width: 1160px;
+    margin: 0 auto;
+    background-color: #e6dcff;
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+
+.about-us-title h2 {
+    color: #460073;
+    font-size: 35px;
+    text-align: center;
+}
+
+.about-us-title p {
+    text-align: left;
+    font-size: 18px;
+}
+
+.about-us-title a {
+    color: #460073;
+}
+
+.sustainability-form {
+    font-family: 'Graphik', sans-serif;
+    max-width: 1160px;
+    margin: 0 auto;
+    background-color: #e6dcff;
+    padding: 5px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+.sustainability-form h2 {
+    text-align: center;
+    color: #460073;
+    font-size: 28px;
+}
+
+.sustainability-form p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#sustainabilityForm {
+    text-align: left;
+}
+
+#sustainabilityForm label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+#activity {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #460073;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #000000;
+    vertical-align: middle;
+}
