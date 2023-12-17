@@ -47,16 +47,16 @@ body {
     padding: 10px;
 }
 
-  button[type="submit"] {
-    background-color: #460073; /* Core Purple 2 */
-    color: #ffffff; /* White text color */
+button {
+    background-color: #460073;
+    color: #ffffff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px; /* Increase font size */
-  }
+    font-size: 18px;
+}
 
-  button[type="submit"]:hover {
-    background-color: #7500c0; /* Core Purple 1 on hover */
-  }
+button:hover {
+    background-color: #7500c0;
+}

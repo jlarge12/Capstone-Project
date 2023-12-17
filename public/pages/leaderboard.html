@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leaderbord</title>
   <link rel="stylesheet" href="../style/styles.css">
+  <link rel="stylesheet" href="../style/leaderboard.css">
 </head>
 <body>
 
@@ -21,33 +22,35 @@
 
   <img src="../images/purpleBanner.jpg" alt="HubBanner" class="PurpleHubBanner">
 
-  <label for="sortOption">Sort By:</label>
-  <select id="sortOption" onchange="changeSortOption()">
-    <option value="" disabled selected>Select Sorting Option</option>
-    <option value="points-desc">Points Highest First</option>
-    <option value="points-asc">Points Lowest First</option>
-    <option value="name-desc">Name Reverse Alphabetically</option>
-    <option value="name-asc">Name Alphabetically</option>
-  </select>
+  <div id="tableDiv">
 
-  <table id="userTable">
-    <thead>
-      <tr>
-        <th>User ID</th>
-        <th>
-          Name
-        </th>
-        <th>Email</th>
-        <th>Activity</th>
-        <th>
-          Points
-        </th>
-      </tr>
-    </thead>
-    <tbody id="userTableBody"></tbody>
-  </table>
+    <div id="titleDiv">
+      <h2 id="leaderboard-title">ATC Rewards Hub Leaderboard</h2>
 
-  <button onclick="resetLeaderboard()">Reset Leaderboard</button>
+      <select id="sortOption" onchange="changeSortOption()">
+        <option value="" disabled selected>Select Sorting Option</option>
+        <option value="points-desc">Points Highest First</option>
+        <option value="points-asc">Points Lowest First</option>
+        <option value="name-desc">Name Reverse Alphabetically</option>
+        <option value="name-asc">Name Alphabetically</option>
+      </select>
+    </div>
+    
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Activity</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody"></tbody>
+    </table>
+
+    <button onclick="resetLeaderboard()">Reset Leaderboard</button>
+  <div/>
 
   <script src="../script/leaderboard.js"></script>
   <script src="../script/check-login.js"></script>

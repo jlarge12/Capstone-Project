@@ -1,0 +1,54 @@
+#tableDiv {
+    font-family: 'Graphik', sans-serif;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#sortOption {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #460073;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#userTable {
+    width: 1100px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#userTable th, #userTable td {
+    border: 1px solid #460073;
+    padding: 12px;
+    text-align: left;
+}
+
+#userTable th {
+    background-color: #e6dcff;
+    color: #460073;
+    font-size: 18px;
+}
+
+#userTable tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+#userTable tbody tr:hover {
+    background-color: #dcdcdc;
+}
+
+#userTableBody td {
+    font-size: 16px;
+}
+
+h2 {
+    color: #460073;
+    font-size: 35px;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 200px;
+}
