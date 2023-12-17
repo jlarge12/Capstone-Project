@@ -22,7 +22,7 @@ function submitLogin() {
         sessionStorage.setItem('userPoints', data.user.points)
 
         // Redirect to the user's dashboard or perform additional actions as needed
-        window.location.href = '../pages/home.html';
+        window.location.href = '../pages/sustainabiityForm.html';
       } else {
         alert('Invalid email or password. Please try again.');
       }

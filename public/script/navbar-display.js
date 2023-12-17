@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const contactUsLink = document.getElementById('contactUsLink');
       
         if (isLoggedIn) {
-          homeLink.style.display = 'inline-block';
+          homeLink.style.display = 'none';
           sustainabilityFormLink.style.display = 'inline-block';
           leaderboardLink.style.display = 'inline-block';
           loginLink.style.display = 'none';

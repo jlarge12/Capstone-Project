@@ -24,3 +24,13 @@
     background-color: #ddd;
     color: black;
 }
+
+.HubBanner {
+    width: 1200px;
+    height: auto;
+}
+
+.PurpleHubBanner {
+    width: 1200px;
+    height: 250px;
+}
