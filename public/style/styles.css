@@ -1,12 +1,14 @@
 #navbar {
-    background-color: #f2f2f2;
+    background-color: #7500c0;
     overflow: hidden;
+    font-family: 'Graphik', sans-serif;
+    font-size: 18px;
 }
   
 #navbar a {
     float: left;
     display: block;
-    color: #333;
+    color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -15,22 +17,52 @@
 #navbar p {
     float: left;
     display: block;
-    color: #333;
+    color: #ffffff;
     text-align: center;
     font-weight: bold;
+    padding: 0px 16px;
 }
 
 #navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #a055f5;
 }
 
 .HubBanner {
     width: 1200px;
     height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .PurpleHubBanner {
-    width: 1200px;
-    height: 250px;
+    width: 1100px;
+    height: 210px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.about-us-container {
+    font-family: 'Graphik', sans-serif;
+    max-width: 1160px; /* Set a maximum width for better readability on larger screens */
+    margin: 0 auto; /* Center the content horizontally */
+    background-color: #e6dcff; /* Accent Purple 5 */
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+
+.about-us-title h2 {
+    color: #460073; /* Core Purple 2 */
+    font-size: 35px; /* Increase font size */
+    text-align: center;
+}
+
+.about-us-title p {
+    text-align: left; /* Left-align paragraphs */
+    font-size: 18px; /* Increase font size */
+}
+
+.about-us-title a {
+    color: #460073; /* Core Purple 2 for the link */
 }

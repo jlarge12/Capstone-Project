@@ -20,28 +20,34 @@
 
   <img src="../images/bannerHub.jpg" alt="HubBanner" class="HubBanner">
 
-  <section class ="AboutUs">
-    <div class ="About-us-title">
+  <div class="about-us-container">
+    <div class ="about-us-title">
       <h2>Welcome to the UK ATC Rewards Hub</h2>
-      <p>The UK ATC Rewards Hub site provides an opportunity for all staff across TAG, Newcastle ATC, and Tech Regional North to engage in sustainable activity in exchange </p>
-      <p>for compensation, rewards, and recognition. The aim of this site is to encourage you to make more environmentally conscious decisions and create sustainable habits<p>
-      <p>not just around the office but in your every day life.</p>
+      <p>The UK ATC Rewards Hub site provides an opportunity for all staff across TAG, Newcastle ATC, and Tech Regional North to engage in sustainable activity in exchange
+      for compensation, rewards, and recognition. The aim of this site is to encourage you to make more environmentally conscious decisions and create sustainable habits
+      not just around the office but in your every day life.</p>
       <p>To find instructions on how to sign up and best use this site to drive your sustainable behaviour. Please click the link below to download our insructions manual.</p>
-      <P>For more information or if you would like to ask any questions, please don't hesitate to get in touch with our team at ATC.Rewards.Hub@accenture.com</P>
+      <P>For more information or if you would like to ask any questions, please don't hesitate to get in touch with our team at ATC.Rewards.Hub@accenture.com.</P>
     </div>
-  </section>
+  </div>
 
-  <form id="addUserForm">
-    <label for="activity">Activity:</label>
-      <select id="activity" name="activity" required>
-        <option value="recycled_plastic">Recycled Plastic</option>
-        <option value="took_the_bus">Took the Bus</option>
-        <!-- Add other activity options as needed -->
-      </select>
-    <br>
+  <div class ="Sustainability-Form">
+    <h2>Submit your Sustainability Achievements</h2>
+    <p>Let us know what you have been doing to be more sustainable at work and in your daily life. You will gain points in the company wide leaderboard by submitting your activities.</p>
 
-    <button type="submit">Submit Activity</button>
-  </form>
+    <form id="addUserForm">
+      <label for="activity">Activity:</label>
+        <select id="activity" name="activity" required>
+          <option value="recycled_plastic">Recycled Plastic</option>
+          <option value="took_the_bus">Took the Bus</option>
+          <!-- Add other activity options as needed -->
+        </select>
+      <br>
+
+      <button type="submit">Submit Activity</button>
+    </form>
+
+  <div/>
 
   <script src="../script/sustainabilityForm.js"></script>
   <script src="../script/redirect-to-login.js"></script>
