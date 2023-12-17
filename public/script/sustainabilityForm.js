@@ -1,5 +1,5 @@
-const addUserForm = document.getElementById('addUserForm');
-    addUserForm.addEventListener('submit', function (event) {
+const sustainabilityForm = document.getElementById('sustainabilityForm');
+sustainabilityForm.addEventListener('submit', function (event) {
       event.preventDefault();
   
       const formData = {

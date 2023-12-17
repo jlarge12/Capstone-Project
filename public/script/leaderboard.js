@@ -31,10 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const emailCell = row.insertCell(2);
         emailCell.textContent = user.email;
 
-        const activityCell = row.insertCell(3);
-        activityCell.textContent = user.activity;
-
-        const pointsCell = row.insertCell(4);
+        const pointsCell = row.insertCell(3);
         pointsCell.textContent = user.points;
       });
     }
