@@ -1,0 +1,53 @@
+#contactForm {
+    font-family: 'Graphik', sans-serif;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #e6dcff; /* Accent Purple 5 */
+    border-radius: 10px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #460073; /* Core Purple 2 */
+}
+
+.inputElement {
+    width: 98%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #460073; /* Core Purple 2 */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+#termsAndConditions {
+    margin-right: 5px;
+}
+
+.button-container {
+    padding-left: 700px;
+}
+
+h2 {
+    color: #460073;
+    font-size: 30px;
+}
+
+p {
+    text-align: left;
+    font-size: 18px;
+}
