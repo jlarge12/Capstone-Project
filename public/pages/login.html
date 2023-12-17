@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Login</title>
   <link rel="stylesheet" href="../style/styles.css">
+  <link rel="stylesheet" href="../style/login-signup.css">
 </head>
 <body>
 
@@ -20,16 +21,18 @@
 
   <img src="../images/bannerHub.jpg" alt="HubBanner" class="HubBanner">
 
-  <h2>User Login</h2>
-  <form id="loginForm">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-
-    <button type="button" onclick="submitLogin()">Log In</button>
-  </form>
+  <div id="form-div">
+    <h2>User Login</h2>
+    <form id="loginForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+  
+      <button type="button" onclick="submitLogin()">Log In</button>
+    </form>
+  </div>
 
   <script src="../script/login.js"></script>
   <script src="../script/navbar-display.js"></script>

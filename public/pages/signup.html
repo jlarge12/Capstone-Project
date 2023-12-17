@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Sign Up</title>
   <link rel="stylesheet" href="../style/styles.css">
+  <link rel="stylesheet" href="../style/login-signup.css">
 </head>
 <body>
 
@@ -20,22 +21,25 @@
 
   <img src="../images/bannerHub.jpg" alt="HubBanner" class="HubBanner">
 
+  <div id="form-div">
+
   <h2>User Sign Up</h2>
-  <form id="signupForm">
-    <label for="fullName">Full Name:</label>
-    <input type="text" id="fullName" name="fullName" required>
+    <form id="signupForm">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
 
-    <label for="employeeId">Employee ID:</label>
-    <input type="text" id="userId" name="userId" required>
+      <label for="employeeId">Employee ID:</label>
+      <input type="text" id="userId" name="userId" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
 
-    <button type="button" onclick="submitSignUp()">Sign Up</button>
-  </form>
+      <button type="button" onclick="submitSignUp()">Sign Up</button>
+    </form>
+  <div/>
 
   <script src="../script/signup.js"></script>
   <script src="../script/navbar-display.js"></script>
